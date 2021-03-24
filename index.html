@@ -12,36 +12,40 @@
   </head>
   <body>
     <div class="container">
-      <p>
-        <label for="new-task">Add Item</label
-        ><input id="new-task" type="text" /><button>Add</button>
-      </p>
+      <h2>My To Do List</h2>
+      <section>
+        <!-- <label for="new-task">Add Item</label> -->
+        <input
+          id="new-task-input"
+          type="text"
+          placeholder="Let's plan the day!.."
+        />
+        <button id="add-btn">Add</button>
+      </section>
 
-      <h3>Todo</h3>
       <ul id="incomplete-tasks">
-        <li>
-          <input type="checkbox" /><label>Pay Bills</label
-          ><input type="text" /><button class="edit">Edit</button
-          ><button class="delete">Delete</button>
-        </li>
-        <li class="editMode">
-          <input type="checkbox" /><label>Go Shopping</label
-          ><input type="text" value="Go Shopping" /><button class="edit">
-            Edit</button
-          ><button class="delete">Delete</button>
-        </li>
+        <!-- <li class="incomplete-tasks__list">
+          <input
+            type="checkbox"
+            class="incomplete-tasks__input--checkbox"
+            class="n"
+          />
+          <label class="incomplete-tasks__label">Pay Bills</label>
+          <button class="incomplete-tasks__button--delete">Delete</button>
+        </li> -->
       </ul>
 
-      <h3>Completed</h3>
+      <!-- <h3>Completed</h3>
       <ul id="completed-tasks">
         <li>
           <input type="checkbox" checked /><label>See the Doctor</label
           ><input type="text" /><button class="edit">Edit</button
           ><button class="delete">Delete</button>
         </li>
-      </ul>
+      </ul> -->
     </div>
 
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.test.js"></script>
   </body>
 </html>
