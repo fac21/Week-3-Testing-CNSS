@@ -1,10 +1,129 @@
-/* When clicked on, add a background color and strike out text */
+/* import font type */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  /* overflow: hidden; */
+  padding: 10px;
+  background-image: url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sea-of-yellow-and-orange-daffodils-royalty-free-image-135169065-1552990435.jpg?crop=0.66667xw:1xh;center,top&resize=768:*");
+  background-size: cover;
+  background-position: center;
+}
+
+/*CSS that is shared by all buttons*/
+button {
+  color: #d0d0d0;
+  background: #721ce3;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 1;
+}
+
+/* container for the whole todo list */
+.container {
+  background: #fff;
+  min-width: 20rem;
+  max-width: 50vw;
+  margin: 5vh auto;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+header {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.new-task {
+  margin: 1.25rem 0;
+  display: flex;
+  height: 3rem;
+}
+
+#new-task__input {
+  width: 85%;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  padding-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.new-task button {
+  width: 15%;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}
+
+#incomplete-tasks {
+  max-height: 600px;
+  overflow-y: auto;
 }
 
 li {
+  position: relative;
   list-style: none;
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  background: #f2f2f2;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
 }
+
+input[type="checkbox"] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* resizing below only works with checkboxes in Chrome*/
+  width: 30px;
+  height: 30px;
+}
+
+label {
+  padding-left: 3rem;
+  width: 70%;
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+}
+
+.incomplete-tasks__button--delete--add {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.incomplete-tasks__button--delete--add:hover {
+  background: #dc143c;
+}
+
+/* @media only screen and (min-width: 768px) {
+  * {
+    font-size: 16px;
+  }
+} */

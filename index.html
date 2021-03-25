@@ -1,39 +1,74 @@
-<html>
+<!DOCTYPE html>
+<html lang="en" >
   <head>
     <title>Todo App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+    <script src="https://kit.fontawesome.com/7f8028ce21.js" crossorigin="anonymous"></script>
   </head>
+
 
   <body>
     <div class="container">
-      <h2>My To Do List</h2>
-      <div>
+      <header>My To Do List</header>
+      <section class="new-task">
         <!-- <label for="new-task">Add Item</label> -->
-        <input id="new-task" type="text" placeholder="Enter a new task..."><button id="add-btn">Add</button>
-      </div>
+        <input id="new-task__input" type="text" placeholder="Enter a new task...">
+        <button id="add-btn" class="new-task__button">Add</button>
+      </section>
 
       <ul id="incomplete-tasks">
         <li>
-          <input type="checkbox"><label>Pay Bills</label>
-          <button class="delete">Delete</button>
+          <input type="checkbox" id="cb1"><label for="cb1">Pay Bills</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
         </li>
-        <li class="editMode">
-          <input type="checkbox"><label>Go Shopping</label>
-          <button class="delete">Delete</button>
+        <li>
+          <input type="checkbox" id="cb2"><label for="cb2">Go Shopping</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
+        </li>
+        <li>
+          <input type="checkbox" id="cb3"><label for="cb3">Go Shopping</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
+        </li>
+        <li>
+          <input type="checkbox" id="cb4"><label for="cb4">Go Shopping</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
+        </li>
+        <li>
+          <input type="checkbox" id="cb5"><label for="cb5">Go Shopping</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
+        </li>
+        <li>
+          <input type="checkbox" id="cb6"><label for="cb6">GoShoppingsyyyyyyyyyyyyyyyggygygygygygygygygygyggyugygygygygyygygygygygygygygyggyugygygygygy</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
+        </li>
+        <li>
+          <input type="checkbox" id="cb7"><label for="cb7">GoShoppingsyyyyyyyyyyyyyyyggygygygygygygygygygyggyugygygygygyygygygygygygygygyggyugygygygygy</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
+        </li>
+        <li>
+          <input type="checkbox" id="cb8"><label for="cb8">GoShoppingsyyyyyyyyyyyyyyyggygygygygygygygygygyggyugygygygygyygygygygygygygygyggyugygygygygy</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
+        </li>
+        <li>
+          <input type="checkbox" id="cb9"><label for="cb9">GoShoppingsyyyyyyyyyyyyyyyggygygygygygygygygygyggyugygygygygyygygygygygygygygyggyugygygygygy</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
+        </li>
+        <li>
+          <input type="checkbox"><label for="cb1">GoShoppingsyyyyyyyyyyyyyyyggygygygygygygygygygyggyugygygygygyygygygygygygygygyggyugygygygygy</label>
+          <button class="incomplete-tasks__button--delete--add" aria-label="delete task">x</button>
         </li>
       </ul>
 
-      <!-- <h3>Completed</h3>
-      <ul id="completed-tasks">
-        <li>
-          <input type="checkbox" checked /><label>See the Doctor</label
-          ><input type="text" /><button class="edit">Edit</button
-          ><button class="delete">Delete</button>
-        </li>
-      </ul> -->
     </div>
 
+    <script src="test-helpers.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script src="script.test.js"></script>
+
+
   </body>
+
 </html>
