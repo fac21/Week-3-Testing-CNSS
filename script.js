@@ -1,22 +1,42 @@
-//Add tasks to a list so that I can keep track of them
-test("Submitting a new task adds it to the list", () => {
-  // test goes here
-});
+const addBtn = document.querySelector(".new-task__button"); // step 1
+const userInput = document.getElementById("new-task__input").value; // step 1
+const inputText = document.createTextNode(userInput); // step 2, create a text node
 
-//Check things off my list so that I can see what I’ve done
-test("Checking an entry marks it as complete", () => {
-  // test goes here
-});
+// Append elements
+function newElement() {
+  const li = document.createElement("li");
+  li.classList.add("incomplete-tasks__list--add");
 
-//Delete things from the list if I don’t need to do them anymore
+  const checkboxInput = document.createElement("input"); // step 1, create an element
+  checkboxInput.classList.add("incomplete-tasks__input--checkbox--add");
+  checkboxInput.type = "checkbox";
 
-test("Deleting an entry removes it from the list", () => {
-  // test goes here
-});
+  const label = document.createElement("label");
+  label.classList.add("incomplete-tasks__label--add");
 
-//Use all the features of the app without a mouse
+  const button = document.createElement("button");
+  button.classList.add("incomplete-tasks__button--delete--add");
+  button.innerHTML = "X";
 
-//Filter out completed to-dos from my list so that I can focus on what’s left to do
-test("Toggling the filter hides completed tasks from the list", () => {
-  // test goes here
+  const userInput = document.getElementById("new-task__input").value; // step 1
+  const inputText = document.createTextNode(userInput); // step 2, create a text node
+
+  if (userInput === "") {
+    // alert("You must write something!");
+    document.getElementById("new-task__input").textContent;
+  } else {
+    li.append(checkboxInput);
+    li.append(label);
+    li.append(button);
+    label.appendChild(inputText); // step 3, append the text to <label>
+    document.getElementById("incomplete-tasks").appendChild(li);
+  }
+  console.log(label.textContent);
+}
+// document.getElementById("new-task__input").value = "";
+
+// Append elements once function is triggered.
+addBtn.addEventListener("click", () => {
+  newElement();
+  // document.getElementById("new-task__input").value = "";
 });

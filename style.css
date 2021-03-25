@@ -100,6 +100,17 @@ input[type="checkbox"] {
   height: 30px;
 }
 
+<<<<<<< HEAD
+.checkbox {
+  border-radius: 70px;
+  color: 1px solid red;
+}
+
+input[type="checkbox"] {
+  border: red;
+  border-radius: 7px;
+}
+=======
 label {
   padding-left: 3rem;
   width: 70%;
@@ -127,3 +138,4 @@ label {
     font-size: 16px;
   }
 } */
+>>>>>>> main
