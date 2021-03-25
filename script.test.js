@@ -22,14 +22,13 @@ test("Delete an entry removes it from the list", () => {
   deleteBtn.click();
   equal(result.children.length, 3); // step 4
 
-  //WHY THIS TEST GETS ERROR WHEN PREVIOUS ONE IS UNSELECTED!
+  //WHY THIS TEST GETS ERROR WHEN PREVIOUS ONE IS COMMENTED OUT!
 });
 
 // //Check things off my list so that I can see what I’ve done
 // test("Checking an entry marks it as complete", () => {
 //   // test goes here
 // });
-..
 
 // //Use all the features of the app without a mouse
 

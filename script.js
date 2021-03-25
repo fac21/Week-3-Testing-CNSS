@@ -47,8 +47,6 @@ addBtn.addEventListener("click", () => {
 //Function to delete items after its completed
 function deleteItems(event) {
   const deleteButtonPressed = event.target;
-  console.log(deleteButtonPressed);
   const itemToDelete = deleteButtonPressed.parentElement;
-  console.log(itemToDelete);
   itemToDelete.remove();
 }
