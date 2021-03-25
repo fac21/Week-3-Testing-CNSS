@@ -12,12 +12,11 @@ function newElement() {
   checkboxInput.type = "checkbox";
 
   const label = document.createElement("label");
-  label.classList.add("incomplete-tasks__label--add")
-
+  label.classList.add("incomplete-tasks__label--add");
 
   const button = document.createElement("button");
   button.classList.add("incomplete-tasks__button--delete--add");
-  button.innerHTML = "delete";
+  button.innerHTML = "X";
 
   const userInput = document.getElementById("new-task__input").value; // step 1
   const inputText = document.createTextNode(userInput); // step 2, create a text node
