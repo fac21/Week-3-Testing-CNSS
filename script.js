@@ -1,5 +1,6 @@
-const addBtn = document.getElementById("add-btn"); // step 1
-const input = document.getElementById("new-task-input").value; // step 1
+const addBtn = document.querySelector(".new-task__button"); // step 1
+const userInput = document.getElementById("new-task__input").value; // step 1
+const inputText = document.createTextNode(userInput); // step 2, create a text node
 
 // Append elements
 function newElement() {
@@ -11,34 +12,32 @@ function newElement() {
   checkboxInput.type = "checkbox";
 
   const label = document.createElement("label");
-  label.classList.add("incomplete-tasks__label--add");
+  label.classList.add("incomplete-tasks__label--add")
+
 
   const button = document.createElement("button");
   button.classList.add("incomplete-tasks__button--delete--add");
   button.innerHTML = "delete";
 
-  const userInput = document.getElementById("new-task-input").value; // step 1
+  const userInput = document.getElementById("new-task__input").value; // step 1
   const inputText = document.createTextNode(userInput); // step 2, create a text node
-
-  label.appendChild(inputText); // step 3, append the text to <label>
-
-  li.append(checkboxInput);
-  li.append(label);
-  li.append(button);
-  // document.getElementById("incomplete-tasks").appendChild(li);
 
   if (userInput === "") {
     // alert("You must write something!");
-    document.getElementById("new-task-input").textContent;
+    document.getElementById("new-task__input").textContent;
   } else {
+    li.append(checkboxInput);
+    li.append(label);
+    li.append(button);
+    label.appendChild(inputText); // step 3, append the text to <label>
     document.getElementById("incomplete-tasks").appendChild(li);
   }
+  console.log(label.textContent);
 }
-
-document.getElementById("new-task-input").value = "";
+// document.getElementById("new-task__input").value = "";
 
 // Append elements once function is triggered.
 addBtn.addEventListener("click", () => {
   newElement();
-  document.getElementById("new-task-input").value = "";
+  // document.getElementById("new-task__input").value = "";
 });

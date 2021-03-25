@@ -1,34 +1,18 @@
-function equal(actual, expected, message) {
-  if (actual === expected) {
-    const defaultMessage = `Expected ${expected} and received ${actual}`;
-    console.info("Pass: " + (message || defaultMessage));
-  } else {
-    const defaultMessage = `Expected ${expected} but received ${actual} instead`;
-    console.error("Fail: " + (message || defaultMessage));
-  }
-}
-
-function test(name, testFunction) {
-  console.group(name);
-  testFunction();
-  console.groupEnd(name);
-}
-
 //Add tasks to a list so that I can keep track of them
 test("Submitting a new task adds it to the list", () => {
   // test goes here
-  const userInput = document.getElementById("new-task-input").value; // step 1
-  userInput.value = "TEST";
+  let userInputExpected = document.getElementById("new-task__input"); // step 1
+  userInputExpected.value = "TEST";
 
-  const addBtn = document.getElementById("add-btn"); // step 1
+  const addBtn = document.querySelector(".new-task__button"); // step 1
+
   addBtn.click();
 
-  const result = document.getElementsByClassName(
-    "incomplete-tasks__label--add"
-  );
+  const result = document.querySelector(".incomplete-tasks__label--add");
+  console.dir(result);
 
   equal(result.textContent, "TEST"); // step 4
-  result.textContent = ""; // reset the page so it doesn't affect the page/other tests
+  userInputExpected.value = ""; // reset the page so it doesn't affect the page/other tests
 });
 
 // //Check things off my list so that I can see what I’ve done
@@ -48,4 +32,3 @@ test("Submitting a new task adds it to the list", () => {
 // test("Toggling the filter hides completed tasks from the list", () => {
 //   // test goes here
 // });
-
