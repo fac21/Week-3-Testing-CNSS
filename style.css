@@ -21,8 +21,8 @@ body {
 
 /*CSS that is shared by all buttons*/
 button {
-  color: #d0d0d0;
-  background: #721ce3;
+  color: black;
+  background: #bab060;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
