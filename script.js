@@ -2,7 +2,6 @@ const addBtn = document.querySelector(".new-task__button"); // step 1
 const userInput = document.getElementById("new-task__input").value; // step 1
 const inputText = document.createTextNode(userInput); // step 2, create a text node
 
-
 // Append elements
 function newElement() {
   const li = document.createElement("li");
@@ -11,7 +10,7 @@ function newElement() {
   const checkboxInput = document.createElement("input"); // step 1, create an element
   checkboxInput.classList.add("incomplete-tasks__input--checkbox--add");
   checkboxInput.type = "checkbox";
-//Create label element and checkbox
+  //Create label element and checkbox
   const label = document.createElement("label");
   label.classList.add("incomplete-tasks__label--add");
 
@@ -22,13 +21,12 @@ function newElement() {
   const userInput = document.getElementById("new-task__input").value; // step 1
   const inputText = document.createTextNode(userInput); // step 2, create a text node
 
-//Adds a Event listener to delete button that was created when new item added 
+  //Adds a Event listener to delete button that was created when new item added
   button.addEventListener("click", (event) => {
-    deleteItems(event); 
+    deleteItems(event);
   });
 
-
-//Formatting elements 
+  //Formatting elements
   if (userInput === "") {
     // alert("You must write something!");
     document.getElementById("new-task__input").textContent;
@@ -40,20 +38,19 @@ function newElement() {
     document.getElementById("incomplete-tasks").appendChild(li);
   }
   console.log(label.textContent);
-
-
 }
-
 
 // Append elements once function is triggered.
 addBtn.addEventListener("click", () => {
   newElement();
 });
 
-
-//Function to delete items after it completed 
+//Function to delete items after it completed
 function deleteItems(event) {
   const deleteButtonPressed = event.target;
   const itemToDelete = deleteButtonPressed.parentElement;
   itemToDelete.remove();
 }
+
+// aria-label="delete task"
+// aria-expanded="false"
