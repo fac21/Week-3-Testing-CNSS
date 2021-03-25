@@ -19,7 +19,19 @@ test("Submitting a new task adds it to the list", () => {
 // TESTING Delete items from list
 
 test("Delete an entry removes it from the list", () => {
-  const result = document.parentElement
+  
+  let liItems = document.querySelectorAll("li");
+  console.log(liItems);
+  let expected = liItems.length -1;
+  let event = { target : { parentElement: liItems[0]}};
+  console.log(event)
+
+  deleteItems(event)
+  console.log(expected);
+  liItems = document.querySelectorAll("li");
+  let actual = liItems.length;
+
+  equal(actual, expected);
 });
 
 
