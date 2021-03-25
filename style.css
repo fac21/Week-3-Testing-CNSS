@@ -69,7 +69,7 @@ header {
 }
 
 .new-task button {
-  width: 15%;
+  width: 35%;
   margin-left: 0.5rem;
   font-size: 1rem;
 }
@@ -110,7 +110,7 @@ label {
 
 .incomplete-tasks__button--delete--add {
   position: absolute;
-  right: 2rem;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1rem;
@@ -122,8 +122,11 @@ label {
   background: #dc143c;
 }
 
-/* @media only screen and (min-width: 768px) {
-  * {
-    font-size: 16px;
+@media only screen and (min-width: 768px) {
+  .incomplete-tasks__button--delete--add {
+    right: 2rem;
   }
-} */
+  .new-task__button {
+    width: 15%;
+  }
+}
