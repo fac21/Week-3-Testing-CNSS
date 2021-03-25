@@ -15,16 +15,22 @@ test("Submitting a new task adds it to the list", () => {
   userInputExpected.value = ""; // reset the page so it doesn't affect the page/other tests
 });
 
+
+// TESTING Delete items from list
+
+test("Delete an entry removes it from the list", () => {
+  const result = document.parentElement
+});
+
+
+
+
 // //Check things off my list so that I can see what I’ve done
 // test("Checking an entry marks it as complete", () => {
 //   // test goes here
 // });
 
-// //Delete things from the list if I don’t need to do them anymore
 
-// test("Deleting an entry removes it from the list", () => {
-//   // test goes here
-// });
 
 // //Use all the features of the app without a mouse
 
