@@ -28,6 +28,7 @@ test("Delete an entry removes it from the list", () => {
 // //Check things off my list so that I can see what I’ve done
 // test("Checking an entry marks it as complete", () => {
 //   // test goes here
+
 // });
 
 // //Use all the features of the app without a mouse
