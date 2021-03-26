@@ -1,19 +1,33 @@
-// //Add tasks to a list so that I can keep track of them
-// test("Submitting a new task adds it to the list", () => {
-//   // test goes here
-//   let userInputExpected = document.getElementById("new-task__input"); // step 1
-//   userInputExpected.value = "TEST";
+test("Submitting a new task adds it to the list", () => {
+  // test goes here
+  let userInputExpected = document.getElementById("new-task__input"); // step 1
+  userInputExpected.value = "TEST";
 
-//   const addBtn = document.querySelector(".new-task__button"); // step 1
-//   addBtn.click();
+  const addBtn = document.querySelector(".new-task__button"); // step 1
 
-//   const result = document.querySelector(".incomplete-tasks__label--add");
+  addBtn.click();
 
-//   equal(result.textContent, "TEST"); // step 4
-//   userInputExpected.value = ""; // reset the page so it doesn't affect the page/other tests
-// });
+  const result = document.querySelector(".incomplete-tasks__label--add");
 
-// // TESTING Delete items from list
+  equal(result.textContent, "TEST"); // step 4
+  result.value = ""; // reset the page so it doesn't affect the page/other tests
+});
+
+test("Delete an entry removes it from the list", () => {
+  let liItems = document.querySelectorAll("li");
+
+  let expected = liItems.length - 1;
+  let event = { target: { parentElement: liItems[0] } };
+
+  deleteItems(event);
+
+  liItems = document.querySelectorAll("li");
+  let actual = liItems.length;
+
+  equal(actual, expected);
+});
+
+// TESTING Delete items from list
 // test("Delete an entry removes it from the list", () => {
 //   const result = document.querySelector(".incomplete-tasks__list--add");
 //   const deleteBtn = document.querySelector(
@@ -21,8 +35,6 @@
 //   );
 //   deleteBtn.click();
 //   equal(result.children.length, 3); // step 4
-
-//   //WHY THIS TEST GETS ERROR WHEN PREVIOUS ONE IS COMMENTED OUT!
 // });
 
 // // //Check things off my list so that I can see what I’ve done

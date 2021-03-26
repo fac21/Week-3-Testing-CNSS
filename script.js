@@ -42,7 +42,7 @@ function createLiTag() {
   return li;
 }
 
-function inputTag(check) {
+function inputTag() {
   const checkboxInput = document.createElement("input"); // step 1, create an element
   checkboxInput.classList.add("incomplete-tasks__input--checkbox--add");
   checkboxInput.type = "checkbox";
@@ -74,7 +74,7 @@ addBtn.addEventListener("click", () => {
   newElement();
 });
 
-//Function to delete items after its completed
+//Function to delete items after it completed
 function deleteItems(event) {
   const deleteButtonPressed = event.target;
   const itemToDelete = deleteButtonPressed.parentElement;
