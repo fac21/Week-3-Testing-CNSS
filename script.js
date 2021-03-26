@@ -84,22 +84,9 @@ function deleteItems(event) {
 // ADD LOGIC TO THE LINE THROUGH STYLING
 function toggle(event) {
   const checkbox = event.currentTarget;
-  console.log(event.target.classList);
-  event.target.classList.toggle("line-through");
-
   // HTML attributes are always strings, so we need to turn it into an actual boolean
   const checked =
     checkbox.getAttribute("aria-checked") === "true" ? true : false;
-
   // set the aria-checked attribute to the opposite of its current boolean value
   checkbox.setAttribute("aria-checked", !checked);
-  if (checked === false) {
-    document.querySelector(
-      ".incomplete-tasks__label--add"
-    ).style.textDecoration = "line-through"; // ADD LOGIC //if checkbex is checked
-  } else {
-    document.querySelector(
-      ".incomplete-tasks__label--add"
-    ).style.textDecoration = ""; // ADD LOGIC //if checkbex is checked
-  }
 }
