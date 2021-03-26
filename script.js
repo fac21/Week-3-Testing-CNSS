@@ -2,22 +2,21 @@ const addBtn = document.querySelector(".new-task__button"); // step 1
 const userInput = document.getElementById("new-task__input").value; // step 1
 const inputText = document.createTextNode(userInput); // step 2, create a text node
 
-// Append elements
+//Create new Elements
 function newElement() {
-  const li = document.createElement("li");
-  li.classList.add("incomplete-tasks__list--add");
+  //Li tag
+  const li = createLiTag();
 
-  const checkboxInput = document.createElement("input"); // step 1, create an element
-  checkboxInput.classList.add("incomplete-tasks__input--checkbox--add");
-  checkboxInput.type = "checkbox";
-  //Create label element and checkbox
-  const label = document.createElement("label");
-  label.classList.add("incomplete-tasks__label--add");
+  //Input Tag
+  const checkboxInput = inputTag();
 
-  const button = document.createElement("button");
-  button.classList.add("incomplete-tasks__button--delete--add");
-  button.innerHTML = "X";
+  //Label Tag
+  const label = labelTag();
 
+  //Button Tag
+  const button = buttonTag();
+
+  //User Input
   const userInput = document.getElementById("new-task__input").value; // step 1
   const inputText = document.createTextNode(userInput); // step 2, create a text node
 
@@ -31,13 +30,43 @@ function newElement() {
     // alert("You must write something!");
     document.getElementById("new-task__input").textContent;
   } else {
-    li.append(checkboxInput);
-    li.append(label);
-    li.append(button);
-    label.appendChild(inputText); // step 3, append the text to <label>
+    li.append(checkboxInput, label, button);
+    label.append(inputText); // step 3, append the text to <label>
     document.getElementById("incomplete-tasks").appendChild(li);
   }
-  console.log(label.textContent);
+}
+
+function createLiTag() {
+  const li = document.createElement("li");
+  li.classList.add("incomplete-tasks__list--add");
+  return li;
+}
+
+function inputTag() {
+  const checkboxInput = document.createElement("input"); // step 1, create an element
+  checkboxInput.classList.add("incomplete-tasks__input--checkbox--add");
+  checkboxInput.type = "checkbox";
+  checkboxInput.setAttribute("type", "checkbox");
+  checkboxInput.setAttribute("id", `input`);
+  checkboxInput.setAttribute("id", `input`);
+  checkboxInput.setAttribute("aria-checked", `false`);
+
+  checkboxInput.addEventListener("click", toggle);
+  return checkboxInput;
+}
+
+function labelTag() {
+  const label = document.createElement("label");
+  label.classList.add("incomplete-tasks__label--add");
+  label.setAttribute("for", `input`);
+  return label;
+}
+
+function buttonTag() {
+  const button = document.createElement("button");
+  button.classList.add("incomplete-tasks__button--delete--add");
+  button.innerHTML = "X";
+  return button;
 }
 
 // Append elements once function is triggered.
@@ -52,5 +81,25 @@ function deleteItems(event) {
   itemToDelete.remove();
 }
 
-// aria-label="delete task"
-// aria-expanded="false"
+// ADD LOGIC TO THE LINE THROUGH STYLING
+function toggle(event) {
+  const checkbox = event.currentTarget;
+  console.log(event.target.classList);
+  event.target.classList.toggle("line-through");
+
+  // HTML attributes are always strings, so we need to turn it into an actual boolean
+  const checked =
+    checkbox.getAttribute("aria-checked") === "true" ? true : false;
+
+  // set the aria-checked attribute to the opposite of its current boolean value
+  checkbox.setAttribute("aria-checked", !checked);
+  if (checked === false) {
+    document.querySelector(
+      ".incomplete-tasks__label--add"
+    ).style.textDecoration = "line-through"; // ADD LOGIC //if checkbex is checked
+  } else {
+    document.querySelector(
+      ".incomplete-tasks__label--add"
+    ).style.textDecoration = ""; // ADD LOGIC //if checkbex is checked
+  }
+}
