@@ -8,7 +8,7 @@
 
 ---
 
-### Decided on the Roles 
+### Roles 
 
  - Facilitator: Neville   
  - Deployment: Safia 
@@ -47,16 +47,7 @@ User Stories
 
 ---
 
-## Scheduled Absences 
-
- - Thursday 25 March 3:30-4:15 - Safia 
- - Thursday 25 March 3:00-3:30 - Sevda 
- 
- ![](https://blog.sage.hr/wp-content/uploads/2016/09/staff_absence.gif)
-
----
-
-## Design of the project :lower_left_paintbrush: 
+## Design of the project
 
  - Researched how to create 'To Do Lists' on MDN and W3Schools to get some ideas 
  - Researched the style of the buttons, checkboxes we shoud use bearing in mind Accessiblity 
