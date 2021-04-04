@@ -10,7 +10,7 @@ test("Submitting a new task adds it to the list", () => {
   const result = document.querySelector(".incomplete-tasks__label--add");
 
   equal(result.textContent, "TEST"); // step 4
-  result.value = ""; // reset the page so it doesn't affect the page/other tests
+  userInputExpected.value = ""; = ""; // reset the page so it doesn't affect the page/other tests
 });
 
 test("Delete an entry removes it from the list", () => {
