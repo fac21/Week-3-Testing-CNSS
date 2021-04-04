@@ -1,6 +1,4 @@
 const addBtn = document.querySelector(".new-task__button"); // step 1
-const userInput = document.getElementById("new-task__input").value; // step 1
-const inputText = document.createTextNode(userInput); // step 2, create a text node
 
 //Create new Elements
 function newElement() {
@@ -17,8 +15,10 @@ function newElement() {
   const button = buttonTag();
 
   //User Input
-  const userInput = document.getElementById("new-task__input").value; // step 1
-  const inputText = document.createTextNode(userInput); // step 2, create a text node
+  let userInput = document.getElementById("new-task__input"); // step 1
+  userInput.value;
+  const inputText = document.createTextNode(userInput.value); // step 2, create a text node
+  userInput.value = "";
 
   //Adds a Event listener to delete button that was created when new item added
   button.addEventListener("click", (event) => {
